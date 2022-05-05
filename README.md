@@ -4,6 +4,10 @@ Shell script that configures locally and a profile with temporary credentials.
 
 ### Usage
 
+```
+./mfa.sh authenticatorCode
+```
+
 ```shell 
 aws s3 ls --profile mfa
 ```
