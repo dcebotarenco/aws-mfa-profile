@@ -7,7 +7,6 @@ echo $MFA_ARN
 GET_TEMPORARY_CREDENTIALS_COMMAND="aws sts get-session-token --serial-number $MFA_ARN --token-code $1" 
 CREDENTIALS=$(eval $GET_TEMPORARY_CREDENTIALS_COMMAND)
 
-#echo $CREDENTIALS
 
 AWS_ACCESS_KEY_ID=$(jq -r '.Credentials.AccessKeyId' <<< "$CREDENTIALS") 
 AWS_ACCESS_KEY_SECRET=$(jq -r '.Credentials.SecretAccessKey' <<< "$CREDENTIALS") 
