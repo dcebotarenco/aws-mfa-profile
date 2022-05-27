@@ -2,7 +2,7 @@
 
 Shell script that configures locally and a profile with temporary credentials.
 
-### Usage
+### user MFA Usage
 
 ```
 ./mfa.sh authenticatorCode
@@ -10,6 +10,16 @@ Shell script that configures locally and a profile with temporary credentials.
 
 ```shell 
 aws s3 ls --profile mfa
+```
+
+### assume role MFA Usage
+
+```
+./role.sh arn:aws:iam::22222222:role/theRole authenticatorCode
+```
+
+```shell 
+aws s3 ls --profile theRole
 ```
 
 ### Requirements:
